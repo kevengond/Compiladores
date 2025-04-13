@@ -824,147 +824,195 @@ YY_RULE_SETUP
 case 3:
 YY_RULE_SETUP
 #line 20 "goianinha.l"
-{ printf("[TOKEN]: 'programa' | [LINHA]: %d\n\n", yylineno); return 258; }
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 258, yylineno); 
+    return 258; 
+}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 21 "goianinha.l"
-{ printf("[TOKEN]: 'car' | [LINHA]: %d\n\n", yylineno); return 259; }
+#line 24 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 259, yylineno); 
+    return 259; 
+}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 22 "goianinha.l"
-{ printf("[TOKEN]: 'int' | [LINHA]: %d\n\n", yylineno); return 260; }
+#line 28 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 260, yylineno); 
+    return 260; 
+}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 23 "goianinha.l"
-{ printf("[TOKEN]: 'retorne' | [LINHA]: %d\n\n", yylineno); return 261; }
+#line 32 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 261, yylineno); 
+    return 261; 
+}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 24 "goianinha.l"
-{ printf("[TOKEN]: 'leia' | [LINHA]: %d\n\n", yylineno); return 262; }
+#line 36 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 262, yylineno); 
+    return 262; 
+}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 25 "goianinha.l"
-{ printf("[TOKEN]: 'escreva' | [LINHA]: %d\n\n", yylineno); return 263; }
+#line 40 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 263, yylineno); 
+    return 263; 
+}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 27 "goianinha.l"
+#line 45 "goianinha.l"
 {
-    printf("[TOKEN]: 'identificador' (%s) | [LINHA]: %d\n\n", yytext, yylineno);
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 270, yylineno);
     return 270;
 }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 33 "goianinha.l"
+#line 51 "goianinha.l"
 {
-    printf("[TOKEN]: 'número' (%s) | [LINHA]: %d\n\n", yytext, yylineno);
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 272, yylineno);
     return 272;
 }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 38 "goianinha.l"
-{ printf("[TOKEN]: '=' | [LINHA]: %d\n\n", yylineno); return '='; }
+#line 56 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '=', yylineno); 
+    return '='; 
+}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 39 "goianinha.l"
-{ printf("[TOKEN]: '+' | [LINHA]: %d\n\n", yylineno); return '+'; }
+#line 60 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '+', yylineno); 
+    return '+'; 
+}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 40 "goianinha.l"
-{ printf("[TOKEN]: '-' | [LINHA]: %d\n\n", yylineno); return '-'; }
+#line 64 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '-', yylineno); 
+    return '-'; 
+}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 41 "goianinha.l"
-{ printf("[TOKEN]: '*' | [LINHA]: %d\n\n", yylineno); return '*'; }
+#line 68 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '*', yylineno); 
+    return '*'; 
+}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 42 "goianinha.l"
-{ printf("[TOKEN]: '/' | [LINHA]: %d\n\n", yylineno); return '/'; }
+#line 72 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '/', yylineno); 
+    return '/'; 
+}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 43 "goianinha.l"
-{ printf("[TOKEN]: '(' | [LINHA]: %d\n\n", yylineno); return '('; }
+#line 76 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '(', yylineno); 
+    return '('; 
+}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 44 "goianinha.l"
-{ printf("[TOKEN]: ')' | [LINHA]: %d\n\n", yylineno); return ')'; }
+#line 80 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, ')', yylineno); 
+    return ')'; 
+}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 45 "goianinha.l"
-{ printf("[TOKEN]: '{' | [LINHA]: %d\n\n", yylineno); return '{'; }
+#line 84 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '{', yylineno); 
+    return '{'; 
+}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 46 "goianinha.l"
-{ printf("[TOKEN]: '}' | [LINHA]: %d\n\n", yylineno); return '}'; }
+#line 88 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '}', yylineno); 
+    return '}'; 
+}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 47 "goianinha.l"
-{ printf("[TOKEN]: ';' | [LINHA]: %d\n\n", yylineno); return ';'; }
+#line 92 "goianinha.l"
+{ 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, ';', yylineno); 
+    return ';'; 
+}
 	YY_BREAK
 case 21:
 /* rule 21 can match eol */
 YY_RULE_SETUP
-#line 50 "goianinha.l"
+#line 98 "goianinha.l"
 {
-    printf("[COMENTÁRIO]: Ignorado | [LINHA]: %d\n\n", yylineno);
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 273, yylineno);
 }
 	YY_BREAK
 case 22:
 /* rule 22 can match eol */
 YY_RULE_SETUP
-#line 56 "goianinha.l"
+#line 104 "goianinha.l"
 {
-    printf("[ERRO]: Caractere inválido (%s) | [LINHA]: %d\n", yytext, yylineno);
+    printf("ERRO: CARACTERE INVALIDO linha %d\n", yylineno);
     return -1;
 }
 	YY_BREAK
 case 23:
 /* rule 23 can match eol */
 YY_RULE_SETUP
-#line 61 "goianinha.l"
+#line 109 "goianinha.l"
 {
-    printf("[ERRO]: Comentário não terminado | [LINHA]: %d\n", yylineno);
+    printf("ERRO: COMENTARIO NAO TERMINA linha %d\n", yylineno);
     return -2; 
 }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 66 "goianinha.l"
+#line 114 "goianinha.l"
 {
-    printf("[ERRO]: Cadeia de caracteres não terminada | [LINHA]: %d\n", yylineno);
+    printf("ERRO: CADEIA DE CARACTERES OCUPA MAIS DE UMA LINHA linha %d\n", yylineno);
     return -3;
 }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 71 "goianinha.l"
+#line 119 "goianinha.l"
 {
-    printf("[TOKEN]: 'string' (%s) | [LINHA]: %d\n\n", yytext, yylineno);
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 273, yylineno);
     return 273; 
 }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 76 "goianinha.l"
+#line 124 "goianinha.l"
 ECHO;
 	YY_BREAK
-#line 968 "goianinha.c"
+#line 1016 "goianinha.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1981,6 +2029,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 76 "goianinha.l"
+#line 124 "goianinha.l"
 
 

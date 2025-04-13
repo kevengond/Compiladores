@@ -17,59 +17,107 @@
 \n              { /* yylineno é incrementado automaticamente */ }
 
 
-"programa"      { printf("[TOKEN]: 'programa' | [LINHA]: %d\n\n", yylineno); return 258; }
-"car"           { printf("[TOKEN]: 'car' | [LINHA]: %d\n\n", yylineno); return 259; }
-"int"           { printf("[TOKEN]: 'int' | [LINHA]: %d\n\n", yylineno); return 260; }
-"retorne"       { printf("[TOKEN]: 'retorne' | [LINHA]: %d\n\n", yylineno); return 261; }
-"leia"          { printf("[TOKEN]: 'leia' | [LINHA]: %d\n\n", yylineno); return 262; }
-"escreva"       { printf("[TOKEN]: 'escreva' | [LINHA]: %d\n\n", yylineno); return 263; }
+"programa"      { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 258, yylineno); 
+    return 258; 
+}
+"car"           { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 259, yylineno); 
+    return 259; 
+}
+"int"           { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 260, yylineno); 
+    return 260; 
+}
+"retorne"       { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 261, yylineno); 
+    return 261; 
+}
+"leia"          { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 262, yylineno); 
+    return 262; 
+}
+"escreva"       { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 263, yylineno); 
+    return 263; 
+}
 
 [a-zA-Z_][a-zA-Z0-9_]* {
-    printf("[TOKEN]: 'identificador' (%s) | [LINHA]: %d\n\n", yytext, yylineno);
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 270, yylineno);
     return 270;
 }
 
 
 [0-9]+ {
-    printf("[TOKEN]: 'número' (%s) | [LINHA]: %d\n\n", yytext, yylineno);
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 272, yylineno);
     return 272;
 }
 
-"="             { printf("[TOKEN]: '=' | [LINHA]: %d\n\n", yylineno); return '='; }
-"+"             { printf("[TOKEN]: '+' | [LINHA]: %d\n\n", yylineno); return '+'; }
-"-"             { printf("[TOKEN]: '-' | [LINHA]: %d\n\n", yylineno); return '-'; }
-"*"             { printf("[TOKEN]: '*' | [LINHA]: %d\n\n", yylineno); return '*'; }
-"/"             { printf("[TOKEN]: '/' | [LINHA]: %d\n\n", yylineno); return '/'; }
-"("             { printf("[TOKEN]: '(' | [LINHA]: %d\n\n", yylineno); return '('; }
-")"             { printf("[TOKEN]: ')' | [LINHA]: %d\n\n", yylineno); return ')'; }
-"{"             { printf("[TOKEN]: '{' | [LINHA]: %d\n\n", yylineno); return '{'; }
-"}"             { printf("[TOKEN]: '}' | [LINHA]: %d\n\n", yylineno); return '}'; }
-";"             { printf("[TOKEN]: ';' | [LINHA]: %d\n\n", yylineno); return ';'; }
+"="             { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '=', yylineno); 
+    return '='; 
+}
+"+"             { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '+', yylineno); 
+    return '+'; 
+}
+"-"             { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '-', yylineno); 
+    return '-'; 
+}
+"*"             { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '*', yylineno); 
+    return '*'; 
+}
+"/"             { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '/', yylineno); 
+    return '/'; 
+}
+"("             { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '(', yylineno); 
+    return '('; 
+}
+")"             { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, ')', yylineno); 
+    return ')'; 
+}
+"{"             { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '{', yylineno); 
+    return '{'; 
+}
+"}"             { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '}', yylineno); 
+    return '}'; 
+}
+";"             { 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, ';', yylineno); 
+    return ';'; 
+}
 
 
 "/*"([^*]|\*+[^*/])*\*+"/" {
-    printf("[COMENTÁRIO]: Ignorado | [LINHA]: %d\n\n", yylineno);
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 273, yylineno);
 }
 
 
 
 (\n|.) {
-    printf("[ERRO]: Caractere inválido (%s) | [LINHA]: %d\n", yytext, yylineno);
+    printf("ERRO: CARACTERE INVALIDO linha %d\n", yylineno);
     return -1;
 }
 
 "/*"([^*]|\*+[^*/])*\*? {
-    printf("[ERRO]: Comentário não terminado | [LINHA]: %d\n", yylineno);
+    printf("ERRO: COMENTARIO NAO TERMINA linha %d\n", yylineno);
     return -2; 
 }
 
 \"([^\"\n]*) {
-    printf("[ERRO]: Cadeia de caracteres não terminada | [LINHA]: %d\n", yylineno);
+    printf("ERRO: CADEIA DE CARACTERES OCUPA MAIS DE UMA LINHA linha %d\n", yylineno);
     return -3;
 }
 
 \"([^\"\n]|\\.)*\" {
-    printf("[TOKEN]: 'string' (%s) | [LINHA]: %d\n\n", yytext, yylineno);
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 273, yylineno);
     return 273; 
 }
 

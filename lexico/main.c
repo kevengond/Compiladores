@@ -19,8 +19,7 @@ int main(int argc, char** argv) {
     }
 
     int token = yylex();  
-    while (token) {
-        printf("token: %d lexema: %s\n", token, yytext);  
+    while (token) { 
         token = yylex();
     }
 
