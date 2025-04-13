@@ -96,13 +96,13 @@
 
 
 "/*"([^*]|\*+[^*/])*\*+"/" {
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 273, yylineno);
+    /* Comentário ignorado */
 }
 
 
 
 (\n|.) {
-    printf("ERRO: CARACTERE INVALIDO linha %d\n", yylineno);
+    printf("ERRO: CARACTERE %s INVALIDO linha %d\n", yytext, yylineno);
     return -1;
 }
 

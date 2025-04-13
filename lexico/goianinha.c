@@ -970,7 +970,7 @@ case 21:
 YY_RULE_SETUP
 #line 98 "goianinha.l"
 {
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, 273, yylineno);
+    /* Comentário ignorado */
 }
 	YY_BREAK
 case 22:
@@ -978,7 +978,7 @@ case 22:
 YY_RULE_SETUP
 #line 104 "goianinha.l"
 {
-    printf("ERRO: CARACTERE INVALIDO linha %d\n", yylineno);
+    printf("ERRO: CARACTERE %s INVALIDO linha %d\n", yytext, yylineno);
     return -1;
 }
 	YY_BREAK
