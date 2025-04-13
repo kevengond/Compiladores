@@ -970,7 +970,7 @@ case 21:
 YY_RULE_SETUP
 #line 98 "goianinha.l"
 {
-    /* Comentário ignorado */
+    /*  Comentário ignorado  */
 }
 	YY_BREAK
 case 22:

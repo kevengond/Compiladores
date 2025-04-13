@@ -96,7 +96,7 @@
 
 
 "/*"([^*]|\*+[^*/])*\*+"/" {
-    /* Comentário ignorado */
+    /*  Comentário ignorado  */
 }
 
 
