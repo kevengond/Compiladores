@@ -1,33 +1,41 @@
 #ifndef TABELA_SIMBOLOS_H
 #define TABELA_SIMBOLOS_H
 
-#include <iostream>
-#include <unordered_map>
-#include <stack>
-#include <string>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-using namespace std;
+// Estrutura para representar um símbolo
+typedef struct Simbolo {
+    char* tipo;
+    char* valor;
+} Simbolo;
 
+// Nó da lista encadeada para armazenar os símbolos de um escopo
+typedef struct NoSimbolo {
+    char* nome;              // Nome do símbolo
+    Simbolo simbolo;         // Dados do símbolo
+    struct NoSimbolo* prox;  // Próximo símbolo na lista
+} NoSimbolo;
 
-struct Simbolo {
-    string tipo;
-    string valor; 
-};
+// Estrutura para representar um escopo (tabela de símbolos)
+typedef struct Escopo {
+    NoSimbolo* simbolos;     // Lista encadeada de símbolos
+    struct Escopo* prox;     // Próximo escopo na pilha
+} Escopo;
 
-class TabelaDeSimbolos {
-private:
-    stack<unordered_map<string, Simbolo>> pilha; // Pilha de tabelas de símbolos
+// Estrutura para representar a pilha de escopos
+typedef struct PilhaDeEscopos {
+    Escopo* topo;            // Topo da pilha
+} PilhaDeEscopos;
 
-public:
-    TabelaDeSimbolos(); 
-    void novoEscopo();   // Cria um novo escopo
-    void removerEscopo(); // Remove o escopo atual
-    void inserir(const string& nome, const string& tipo, const string& valor = ""); // Insere símbolo
-    Simbolo* buscar(const string& nome); // Busca um símbolo
-    void mostrarEscopoAtual(); // Mostra os símbolos do escopo atual
-    void inserirFuncao(const string& nome, int numParametros, const string& tipoRetorno); // Insere uma função
-    void inserirParametro(const string& nome, int tipo, int posicao, Simbolo* funcao); // Insere um parâmetro
-    void eliminarPilha(); // Elimina toda a pilha de escopos
-};
+// Funções da tabela de símbolos
+void inicializarPilha(PilhaDeEscopos* pilha);
+void novoEscopo(PilhaDeEscopos* pilha);
+void removerEscopo(PilhaDeEscopos* pilha);
+void inserirSimbolo(PilhaDeEscopos* pilha, const char* nome, const char* tipo, const char* valor);
+Simbolo* buscarSimbolo(PilhaDeEscopos* pilha, const char* nome);
+void mostrarEscopoAtual(PilhaDeEscopos* pilha);
+void eliminarPilha(PilhaDeEscopos* pilha);
 
 #endif // TABELA_SIMBOLOS_H

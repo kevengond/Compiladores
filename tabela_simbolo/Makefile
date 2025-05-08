@@ -1,26 +1,26 @@
 
-CXX = g++
+CC = gcc
 
 
-CXXFLAGS = -Wall -Wextra -g
+CFLAGS = -Wall -g
 
 # Nome do executável
 EXEC = tabela_simbolos
 
 # Arquivos fonte
-SRC = main.cpp tabela_simbolos.cpp
-OBJ = $(SRC:.cpp=.o)
+SRC = main.c tabela_simbolos.c
+OBJ = $(SRC:.c=.o)
 
 # Regra padrão para compilar tudo
 all: $(EXEC)
 
 # Regra para compilar o executável
 $(EXEC): $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $(EXEC) $(OBJ)
+	$(CC) $(CFLAGS) -o $(EXEC) $(OBJ)
 
-# Regra para compilar arquivos .cpp em .o
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+# Regra para compilar arquivos .c em .o
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # Regra para limpar arquivos compilados
 clean:
