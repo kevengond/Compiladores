@@ -5,31 +5,31 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Estrutura para representar um símbolo
+
 typedef struct Simbolo {
     char* tipo;
     char* valor;
 } Simbolo;
 
-// Nó da lista encadeada para armazenar os símbolos de um escopo
+
 typedef struct NoSimbolo {
-    char* nome;              // Nome do símbolo
-    Simbolo simbolo;         // Dados do símbolo
-    struct NoSimbolo* prox;  // Próximo símbolo na lista
+    char* nome;              
+    Simbolo simbolo;         
+    struct NoSimbolo* prox;  
 } NoSimbolo;
 
-// Estrutura para representar um escopo (tabela de símbolos)
+
 typedef struct Escopo {
-    NoSimbolo* simbolos;     // Lista encadeada de símbolos
-    struct Escopo* prox;     // Próximo escopo na pilha
+    NoSimbolo* simbolos;     
+    struct Escopo* prox;     
 } Escopo;
 
-// Estrutura para representar a pilha de escopos
+
 typedef struct PilhaDeEscopos {
-    Escopo* topo;            // Topo da pilha
+    Escopo* topo;            
 } PilhaDeEscopos;
 
-// Funções da tabela de símbolos
+
 void inicializarPilha(PilhaDeEscopos* pilha);
 void novoEscopo(PilhaDeEscopos* pilha);
 void removerEscopo(PilhaDeEscopos* pilha);
