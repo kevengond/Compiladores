@@ -11,32 +11,32 @@ extern char *yytext;
 void yyerror(const char *s);
 %}
 
-%token PROGRAM 258
-%token CAR 259
-%token INT 260
-%token RETORNE 261
-%token LEIA 262
-%token ESCREVA 263
-%token NOVALINHA 264
-%token SE 265
-%token ENTAO 266
-%token SENAO 267
-%token ENQUANTO 268
-%token EXECUTE 269
-%token ID 270
-%token CAD_CAR 271
-%token INTCONST 272
-%token DIF 273
-%token MENOR_IGUAL 274
-%token MAIOR_IGUAL 275
-%token MENOR 276
-%token MAIOR 277
-%token ERROR
+%token TK_PROGRAM 258
+%token TK_CAR 259
+%token TK_INT 260
+%token TK_RETORNE 261
+%token TK_LEIA 262
+%token TK_ESCREVA 263
+%token TK_NOVALINHA 264
+%token TK_SE 265
+%token TK_ENTAO 266
+%token TK_SENAO 267
+%token TK_ENQUANTO 268
+%token TK_EXECUTE 269
+%token TK_ID 270
+%token TK_CAD_CAR 271
+%token TK_INTCONST 272
+%token TK_DIF 273
+%token TK_MENOR_IGUAL 274
+%token TK_MAIOR_IGUAL 275
+%token TK_MENOR 276
+%token TK_MAIOR 277
+%token TK_ERROR
 
-%left OU
-%left E
-%left IGUAL DIF
-%left MENOR MAIOR MENOR_IGUAL MAIOR_IGUAL
+%left TK_OU
+%left TK_E
+%left TK_IGUAL TK_DIF
+%left TK_MENOR TK_MAIOR TK_MENOR_IGUAL TK_MAIOR_IGUAL
 %left '+' '-'
 %left '*' '/'
 %right NEG UNEG
@@ -47,15 +47,15 @@ Programa: DeclFuncVar DeclProg
     { printf("Programa reconhecido com sucesso!\n"); }
     ;
 
-DeclFuncVar: Tipo ID DeclVar ';' DeclFuncVar
-    | Tipo ID DeclFunc DeclFuncVar
+DeclFuncVar: Tipo TK_ID DeclVar ';' DeclFuncVar
+    | Tipo TK_ID DeclFunc DeclFuncVar
     | /* vazio */
     ;
 
-DeclProg: PROGRAM Bloco
+DeclProg: TK_PROGRAM Bloco
     ;
 
-DeclVar: ',' ID DeclVar
+DeclVar: ',' TK_ID DeclVar
     | /* vazio */
     ;
 
@@ -66,19 +66,19 @@ ListaParametros: /* vazio */
     | ListaParametrosCont
     ;
 
-ListaParametrosCont: Tipo ID
-    | Tipo ID ',' ListaParametrosCont
+ListaParametrosCont: Tipo TK_ID
+    | Tipo TK_ID ',' ListaParametrosCont
     ;
 
 Bloco: '{' ListaDeclVar ListaComando '}'
     ;
 
 ListaDeclVar: /* vazio */
-    | Tipo ID DeclVar ';' ListaDeclVar
+    | Tipo TK_ID DeclVar ';' ListaDeclVar
     ;
 
-Tipo: INT
-    | CAR
+Tipo: TK_INT
+    | TK_CAR
     ;
 
 ListaComando: Comando
@@ -87,38 +87,38 @@ ListaComando: Comando
 
 Comando: ';'
     | Expr ';'
-    | RETORNE Expr ';'
-    | LEIA ID ';'
-    | ESCREVA Expr ';'
-    | ESCREVA CAD_CAR ';'
-    | NOVALINHA ';'
-    | SE '(' Expr ')' ENTAO Comando
-    | SE '(' Expr ')' ENTAO Comando SENAO Comando
-    | ENQUANTO '(' Expr ')' EXECUTE Comando
+    | TK_RETORNE Expr ';'
+    | TK_LEIA TK_ID ';'
+    | TK_ESCREVA Expr ';'
+    | TK_ESCREVA TK_CAD_CAR ';'
+    | TK_NOVALINHA ';'
+    | TK_SE '(' Expr ')' TK_ENTAO Comando
+    | TK_SE '(' Expr ')' TK_ENTAO Comando TK_SENAO Comando
+    | TK_ENQUANTO '(' Expr ')' TK_EXECUTE Comando
     | Bloco
     ;
 
 Expr: OrExpr
-    | ID '=' Expr
+    | TK_ID '=' Expr
     ;
 
-OrExpr: OrExpr OU AndExpr
+OrExpr: OrExpr TK_OU AndExpr
     | AndExpr
     ;
 
-AndExpr: AndExpr E EqExpr
+AndExpr: AndExpr TK_E EqExpr
     | EqExpr
     ;
 
-EqExpr: EqExpr IGUAL DesigExpr
-    | EqExpr DIF DesigExpr
+EqExpr: EqExpr TK_IGUAL DesigExpr
+    | EqExpr TK_DIF DesigExpr
     | DesigExpr
     ;
 
-DesigExpr: DesigExpr MENOR AddExpr
-    | DesigExpr MAIOR AddExpr
-    | DesigExpr MAIOR_IGUAL AddExpr
-    | DesigExpr MENOR_IGUAL AddExpr
+DesigExpr: DesigExpr TK_MENOR AddExpr
+    | DesigExpr TK_MAIOR AddExpr
+    | DesigExpr TK_MAIOR_IGUAL AddExpr
+    | DesigExpr TK_MENOR_IGUAL AddExpr
     | AddExpr
     ;
 
@@ -137,10 +137,10 @@ UnExpr: '-' PrimExpr %prec UNEG
     | PrimExpr
     ;
 
-PrimExpr: ID '(' ListExpr ')'
-    | ID '(' ')'
-    | ID
-    | INTCONST
+PrimExpr: TK_ID '(' ListExpr ')'
+    | TK_ID '(' ')'
+    | TK_ID
+    | TK_INTCONST
     | '(' Expr ')'
     ;
 
