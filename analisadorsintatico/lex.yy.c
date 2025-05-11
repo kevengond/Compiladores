@@ -550,7 +550,8 @@ char *yytext;
 #include <string.h>
 #include "parser.tab.h" 
 #line 553 "lex.yy.c"
-#line 554 "lex.yy.c"
+#define YY_NO_INPUT 1
+#line 555 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -610,8 +611,6 @@ extern int yywrap ( void );
 #endif
 
 #ifndef YY_NO_UNPUT
-    
-    static void yyunput ( int c, char *buf_ptr  );
     
 #endif
 
@@ -767,10 +766,10 @@ YY_DECL
 		}
 
 	{
-#line 11 "../lexico/goianinha.l"
+#line 12 "../lexico/goianinha.l"
 
 
-#line 774 "lex.yy.c"
+#line 773 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -839,194 +838,194 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 13 "../lexico/goianinha.l"
+#line 14 "../lexico/goianinha.l"
 ;
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 14 "../lexico/goianinha.l"
+#line 15 "../lexico/goianinha.l"
 { /* yylineno é incrementado automaticamente */ }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 16 "../lexico/goianinha.l"
+#line 17 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, PROGRAM, yylineno); 
-    return PROGRAM; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_PROGRAM, yylineno); 
+    return TK_PROGRAM; 
 }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 20 "../lexico/goianinha.l"
+#line 21 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, CAR, yylineno); 
-    return CAR; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_CAR, yylineno); 
+    return TK_CAR; 
 }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 24 "../lexico/goianinha.l"
+#line 25 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, INT, yylineno); 
-    return INT; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_INT, yylineno); 
+    return TK_INT; 
 }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 28 "../lexico/goianinha.l"
+#line 29 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, RETORNE, yylineno); 
-    return RETORNE; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_RETORNE, yylineno); 
+    return TK_RETORNE; 
 }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 32 "../lexico/goianinha.l"
+#line 33 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, LEIA, yylineno); 
-    return LEIA; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_LEIA, yylineno); 
+    return TK_LEIA; 
 }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 36 "../lexico/goianinha.l"
+#line 37 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, ESCREVA, yylineno); 
-    return ESCREVA; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_ESCREVA, yylineno); 
+    return TK_ESCREVA; 
 }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 40 "../lexico/goianinha.l"
+#line 41 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, NOVALINHA, yylineno); 
-    return NOVALINHA; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_NOVALINHA, yylineno); 
+    return TK_NOVALINHA; 
 }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 44 "../lexico/goianinha.l"
+#line 45 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, SE, yylineno); 
-    return SE; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_SE, yylineno); 
+    return TK_SE; 
 }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 48 "../lexico/goianinha.l"
+#line 49 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, ENTAO, yylineno); 
-    return ENTAO; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_ENTAO, yylineno); 
+    return TK_ENTAO; 
 }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 52 "../lexico/goianinha.l"
+#line 53 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, SENAO, yylineno); 
-    return SENAO; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_SENAO, yylineno); 
+    return TK_SENAO; 
 }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 56 "../lexico/goianinha.l"
+#line 57 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, ENQUANTO, yylineno); 
-    return ENQUANTO; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_ENQUANTO, yylineno); 
+    return TK_ENQUANTO; 
 }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 60 "../lexico/goianinha.l"
+#line 61 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, EXECUTE, yylineno); 
-    return EXECUTE; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_EXECUTE, yylineno); 
+    return TK_EXECUTE; 
 }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 65 "../lexico/goianinha.l"
+#line 66 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, IGUAL, yylineno); 
-    return IGUAL; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_IGUAL, yylineno); 
+    return TK_IGUAL; 
 }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 69 "../lexico/goianinha.l"
+#line 70 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, DIF, yylineno); 
-    return DIF; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_DIF, yylineno); 
+    return TK_DIF; 
 }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 73 "../lexico/goianinha.l"
+#line 74 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, MENOR_IGUAL, yylineno); 
-    return MENOR_IGUAL; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_MENOR_IGUAL, yylineno); 
+    return TK_MENOR_IGUAL; 
 }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 77 "../lexico/goianinha.l"
+#line 78 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, MAIOR_IGUAL, yylineno); 
-    return MAIOR_IGUAL; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_MAIOR_IGUAL, yylineno); 
+    return TK_MAIOR_IGUAL; 
 }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 81 "../lexico/goianinha.l"
+#line 82 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, MENOR, yylineno); 
-    return MENOR; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_MENOR, yylineno); 
+    return TK_MENOR; 
 }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 85 "../lexico/goianinha.l"
+#line 86 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, MAIOR, yylineno); 
-    return MAIOR; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_MAIOR, yylineno); 
+    return TK_MAIOR; 
 }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 89 "../lexico/goianinha.l"
+#line 90 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, E, yylineno); 
-    return E; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_E, yylineno); 
+    return TK_E; 
 }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 93 "../lexico/goianinha.l"
+#line 94 "../lexico/goianinha.l"
 { 
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, OU, yylineno); 
-    return OU; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_OU, yylineno); 
+    return TK_OU; 
 }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 98 "../lexico/goianinha.l"
+#line 99 "../lexico/goianinha.l"
 {
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, ID, yylineno);
-    return ID;
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_ID, yylineno);
+    return TK_ID;
 }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 103 "../lexico/goianinha.l"
+#line 104 "../lexico/goianinha.l"
 {
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, INTCONST, yylineno);
-    return INTCONST;
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_INTCONST, yylineno);
+    return TK_INTCONST;
 }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 108 "../lexico/goianinha.l"
+#line 109 "../lexico/goianinha.l"
 { 
     printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '=', yylineno); 
     return '='; 
@@ -1034,7 +1033,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 112 "../lexico/goianinha.l"
+#line 113 "../lexico/goianinha.l"
 { 
     printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '+', yylineno); 
     return '+'; 
@@ -1042,7 +1041,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 116 "../lexico/goianinha.l"
+#line 117 "../lexico/goianinha.l"
 { 
     printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '-', yylineno); 
     return '-'; 
@@ -1050,7 +1049,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 120 "../lexico/goianinha.l"
+#line 121 "../lexico/goianinha.l"
 { 
     printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '*', yylineno); 
     return '*'; 
@@ -1058,7 +1057,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 124 "../lexico/goianinha.l"
+#line 125 "../lexico/goianinha.l"
 { 
     printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '/', yylineno); 
     return '/'; 
@@ -1066,7 +1065,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 128 "../lexico/goianinha.l"
+#line 129 "../lexico/goianinha.l"
 { 
     printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '(', yylineno); 
     return '('; 
@@ -1074,7 +1073,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 132 "../lexico/goianinha.l"
+#line 133 "../lexico/goianinha.l"
 { 
     printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, ')', yylineno); 
     return ')'; 
@@ -1082,7 +1081,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 136 "../lexico/goianinha.l"
+#line 137 "../lexico/goianinha.l"
 { 
     printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '{', yylineno); 
     return '{'; 
@@ -1090,7 +1089,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 140 "../lexico/goianinha.l"
+#line 141 "../lexico/goianinha.l"
 { 
     printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '}', yylineno); 
     return '}'; 
@@ -1098,7 +1097,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 144 "../lexico/goianinha.l"
+#line 145 "../lexico/goianinha.l"
 { 
     printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, ';', yylineno); 
     return ';'; 
@@ -1106,7 +1105,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 148 "../lexico/goianinha.l"
+#line 149 "../lexico/goianinha.l"
 { 
     printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, ',', yylineno); 
     return ','; 
@@ -1114,7 +1113,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 152 "../lexico/goianinha.l"
+#line 153 "../lexico/goianinha.l"
 { 
     printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, '!', yylineno); 
     return '!'; 
@@ -1123,51 +1122,51 @@ YY_RULE_SETUP
 case 37:
 /* rule 37 can match eol */
 YY_RULE_SETUP
-#line 157 "../lexico/goianinha.l"
+#line 158 "../lexico/goianinha.l"
 {
     /*  Comentário ignorado  */
 }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 161 "../lexico/goianinha.l"
+#line 162 "../lexico/goianinha.l"
 {
-    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, CAD_CAR, yylineno);
-    return CAD_CAR; 
+    printf("Encontrado o lexema '%s' pertencente ao token de codigo %d linha %d\n", yytext, TK_CAD_CAR, yylineno);
+    return TK_CAD_CAR; 
 }
 	YY_BREAK
 case 39:
 /* rule 39 can match eol */
 YY_RULE_SETUP
-#line 166 "../lexico/goianinha.l"
+#line 167 "../lexico/goianinha.l"
 {
     printf("ERRO: CARACTERE %s INVALIDO linha %d\n", yytext, yylineno);
-    return ERROR;
+    return TK_ERROR;
 }
 	YY_BREAK
 case 40:
 /* rule 40 can match eol */
 YY_RULE_SETUP
-#line 171 "../lexico/goianinha.l"
+#line 172 "../lexico/goianinha.l"
 {
     printf("ERRO: COMENTARIO NAO TERMINA linha %d\n", yylineno);
-    return -2; 
+    return TK_ERROR; 
 }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 176 "../lexico/goianinha.l"
+#line 177 "../lexico/goianinha.l"
 {
     printf("ERRO: CADEIA DE CARACTERES OCUPA MAIS DE UMA LINHA linha %d\n", yylineno);
-    return -3;
+    return TK_ERROR;
 }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 181 "../lexico/goianinha.l"
+#line 182 "../lexico/goianinha.l"
 ECHO;
 	YY_BREAK
-#line 1171 "lex.yy.c"
+#line 1170 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1502,47 +1501,6 @@ static int yy_get_next_buffer (void)
 }
 
 #ifndef YY_NO_UNPUT
-
-    static void yyunput (int c, char * yy_bp )
-{
-	char *yy_cp;
-    
-    yy_cp = (yy_c_buf_p);
-
-	/* undo effects of setting up yytext */
-	*yy_cp = (yy_hold_char);
-
-	if ( yy_cp < YY_CURRENT_BUFFER_LVALUE->yy_ch_buf + 2 )
-		{ /* need to shift things up to make room */
-		/* +2 for EOB chars. */
-		int number_to_move = (yy_n_chars) + 2;
-		char *dest = &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[
-					YY_CURRENT_BUFFER_LVALUE->yy_buf_size + 2];
-		char *source =
-				&YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[number_to_move];
-
-		while ( source > YY_CURRENT_BUFFER_LVALUE->yy_ch_buf )
-			*--dest = *--source;
-
-		yy_cp += (int) (dest - source);
-		yy_bp += (int) (dest - source);
-		YY_CURRENT_BUFFER_LVALUE->yy_n_chars =
-			(yy_n_chars) = (int) YY_CURRENT_BUFFER_LVALUE->yy_buf_size;
-
-		if ( yy_cp < YY_CURRENT_BUFFER_LVALUE->yy_ch_buf + 2 )
-			YY_FATAL_ERROR( "flex scanner push-back overflow" );
-		}
-
-	*--yy_cp = (char) c;
-
-    if ( c == '\n' ){
-        --yylineno;
-    }
-
-	(yytext_ptr) = yy_bp;
-	(yy_hold_char) = *yy_cp;
-	(yy_c_buf_p) = yy_cp;
-}
 
 #endif
 
@@ -2184,5 +2142,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 181 "../lexico/goianinha.l"
+#line 182 "../lexico/goianinha.l"
 

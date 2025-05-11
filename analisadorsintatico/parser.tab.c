@@ -111,30 +111,30 @@ enum yysymbol_kind_t
   YYSYMBOL_YYEOF = 0,                      /* "end of file"  */
   YYSYMBOL_YYerror = 1,                    /* error  */
   YYSYMBOL_YYUNDEF = 2,                    /* "invalid token"  */
-  YYSYMBOL_PROGRAM = 3,                    /* PROGRAM  */
-  YYSYMBOL_CAR = 4,                        /* CAR  */
-  YYSYMBOL_INT = 5,                        /* INT  */
-  YYSYMBOL_RETORNE = 6,                    /* RETORNE  */
-  YYSYMBOL_LEIA = 7,                       /* LEIA  */
-  YYSYMBOL_ESCREVA = 8,                    /* ESCREVA  */
-  YYSYMBOL_NOVALINHA = 9,                  /* NOVALINHA  */
-  YYSYMBOL_SE = 10,                        /* SE  */
-  YYSYMBOL_ENTAO = 11,                     /* ENTAO  */
-  YYSYMBOL_SENAO = 12,                     /* SENAO  */
-  YYSYMBOL_ENQUANTO = 13,                  /* ENQUANTO  */
-  YYSYMBOL_EXECUTE = 14,                   /* EXECUTE  */
-  YYSYMBOL_ID = 15,                        /* ID  */
-  YYSYMBOL_CAD_CAR = 16,                   /* CAD_CAR  */
-  YYSYMBOL_INTCONST = 17,                  /* INTCONST  */
-  YYSYMBOL_DIF = 18,                       /* DIF  */
-  YYSYMBOL_MENOR_IGUAL = 19,               /* MENOR_IGUAL  */
-  YYSYMBOL_MAIOR_IGUAL = 20,               /* MAIOR_IGUAL  */
-  YYSYMBOL_MENOR = 21,                     /* MENOR  */
-  YYSYMBOL_MAIOR = 22,                     /* MAIOR  */
-  YYSYMBOL_ERROR = 23,                     /* ERROR  */
-  YYSYMBOL_OU = 24,                        /* OU  */
-  YYSYMBOL_E = 25,                         /* E  */
-  YYSYMBOL_IGUAL = 26,                     /* IGUAL  */
+  YYSYMBOL_TK_PROGRAM = 3,                 /* TK_PROGRAM  */
+  YYSYMBOL_TK_CAR = 4,                     /* TK_CAR  */
+  YYSYMBOL_TK_INT = 5,                     /* TK_INT  */
+  YYSYMBOL_TK_RETORNE = 6,                 /* TK_RETORNE  */
+  YYSYMBOL_TK_LEIA = 7,                    /* TK_LEIA  */
+  YYSYMBOL_TK_ESCREVA = 8,                 /* TK_ESCREVA  */
+  YYSYMBOL_TK_NOVALINHA = 9,               /* TK_NOVALINHA  */
+  YYSYMBOL_TK_SE = 10,                     /* TK_SE  */
+  YYSYMBOL_TK_ENTAO = 11,                  /* TK_ENTAO  */
+  YYSYMBOL_TK_SENAO = 12,                  /* TK_SENAO  */
+  YYSYMBOL_TK_ENQUANTO = 13,               /* TK_ENQUANTO  */
+  YYSYMBOL_TK_EXECUTE = 14,                /* TK_EXECUTE  */
+  YYSYMBOL_TK_ID = 15,                     /* TK_ID  */
+  YYSYMBOL_TK_CAD_CAR = 16,                /* TK_CAD_CAR  */
+  YYSYMBOL_TK_INTCONST = 17,               /* TK_INTCONST  */
+  YYSYMBOL_TK_DIF = 18,                    /* TK_DIF  */
+  YYSYMBOL_TK_MENOR_IGUAL = 19,            /* TK_MENOR_IGUAL  */
+  YYSYMBOL_TK_MAIOR_IGUAL = 20,            /* TK_MAIOR_IGUAL  */
+  YYSYMBOL_TK_MENOR = 21,                  /* TK_MENOR  */
+  YYSYMBOL_TK_MAIOR = 22,                  /* TK_MAIOR  */
+  YYSYMBOL_TK_ERROR = 23,                  /* TK_ERROR  */
+  YYSYMBOL_TK_OU = 24,                     /* TK_OU  */
+  YYSYMBOL_TK_E = 25,                      /* TK_E  */
+  YYSYMBOL_TK_IGUAL = 26,                  /* TK_IGUAL  */
   YYSYMBOL_27_ = 27,                       /* '+'  */
   YYSYMBOL_28_ = 28,                       /* '-'  */
   YYSYMBOL_29_ = 29,                       /* '*'  */
@@ -582,16 +582,17 @@ static const char *yysymbol_name (yysymbol_kind_t yysymbol) YY_ATTRIBUTE_UNUSED;
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "\"end of file\"", "error", "\"invalid token\"", "PROGRAM", "CAR",
-  "INT", "RETORNE", "LEIA", "ESCREVA", "NOVALINHA", "SE", "ENTAO", "SENAO",
-  "ENQUANTO", "EXECUTE", "ID", "CAD_CAR", "INTCONST", "DIF", "MENOR_IGUAL",
-  "MAIOR_IGUAL", "MENOR", "MAIOR", "ERROR", "OU", "E", "IGUAL", "'+'",
-  "'-'", "'*'", "'/'", "NEG", "UNEG", "';'", "','", "'('", "')'", "'{'",
-  "'}'", "'='", "'!'", "$accept", "Programa", "DeclFuncVar", "DeclProg",
-  "DeclVar", "DeclFunc", "ListaParametros", "ListaParametrosCont", "Bloco",
-  "ListaDeclVar", "Tipo", "ListaComando", "Comando", "Expr", "OrExpr",
-  "AndExpr", "EqExpr", "DesigExpr", "AddExpr", "MulExpr", "UnExpr",
-  "PrimExpr", "ListExpr", YY_NULLPTR
+  "\"end of file\"", "error", "\"invalid token\"", "TK_PROGRAM", "TK_CAR",
+  "TK_INT", "TK_RETORNE", "TK_LEIA", "TK_ESCREVA", "TK_NOVALINHA", "TK_SE",
+  "TK_ENTAO", "TK_SENAO", "TK_ENQUANTO", "TK_EXECUTE", "TK_ID",
+  "TK_CAD_CAR", "TK_INTCONST", "TK_DIF", "TK_MENOR_IGUAL",
+  "TK_MAIOR_IGUAL", "TK_MENOR", "TK_MAIOR", "TK_ERROR", "TK_OU", "TK_E",
+  "TK_IGUAL", "'+'", "'-'", "'*'", "'/'", "NEG", "UNEG", "';'", "','",
+  "'('", "')'", "'{'", "'}'", "'='", "'!'", "$accept", "Programa",
+  "DeclFuncVar", "DeclProg", "DeclVar", "DeclFunc", "ListaParametros",
+  "ListaParametrosCont", "Bloco", "ListaDeclVar", "Tipo", "ListaComando",
+  "Comando", "Expr", "OrExpr", "AndExpr", "EqExpr", "DesigExpr", "AddExpr",
+  "MulExpr", "UnExpr", "PrimExpr", "ListExpr", YY_NULLPTR
 };
 
 static const char *
@@ -1209,11 +1210,11 @@ yyreduce:
   case 2: /* Programa: DeclFuncVar DeclProg  */
 #line 47 "parser.y"
     { printf("Programa reconhecido com sucesso!\n"); }
-#line 1213 "parser.tab.c"
+#line 1214 "parser.tab.c"
     break;
 
 
-#line 1217 "parser.tab.c"
+#line 1218 "parser.tab.c"
 
       default: break;
     }
